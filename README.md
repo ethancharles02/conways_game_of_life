@@ -31,6 +31,10 @@ Here are some of the things I am interested in adding later
 * Pausing the game
 * Adjusting the size of the board for cells outside of the screen space (they get killed right now if they are off screen)
 
+# Video
+Here is a video I made explaining the program! Please forgive the audio quality.
+[Conway's Game of Life in Python](https://youtu.be/IMtzUaAv-ok)
+
 
 
 
