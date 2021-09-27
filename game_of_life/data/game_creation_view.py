@@ -34,7 +34,7 @@ class GameCreationView(arcade.View):
 
     def on_draw(self):
         """
-        Displays the grid for cell placement
+        Displays the grid for cell placement or the hint text
         """
         arcade.start_render()
 
