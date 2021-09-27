@@ -1,6 +1,15 @@
 """
 The entry point to run the cell game
 """
+
+# Possible additions:
+#   add mouse click and drag to create cells
+#   save cell configurations as files
+#   import cell configs
+#   update constants in menu
+#   pause mechanic
+#   adjust size of the board for cells leaving the screen space to make it an infinite size board
+
 import arcade
 import os
 

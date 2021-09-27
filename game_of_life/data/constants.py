@@ -8,8 +8,8 @@ SCREEN_TITLE = "Conway's Game of Life"
 # It functions just fine either way but it will look weird
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
-BOARD_WIDTH = 50
-BOARD_HEIGHT = 50
+BOARD_WIDTH = 35
+BOARD_HEIGHT = 35
 
 ESCAPE_KEY = key.ESCAPE
 

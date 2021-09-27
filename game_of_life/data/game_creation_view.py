@@ -50,7 +50,7 @@ class GameCreationView(arcade.View):
                 arcade.draw_lrtb_rectangle_filled(0, constants.SCREEN_WIDTH - 1, y_pos + 0.5, y_pos - 0.5, arcade.color.WHITE)
         
         else:
-            arcade.draw_text('Press "R" to randomize the cell creation\nPress "ESC" to exit or return to the creation menu if in game\nPress "Enter" to start\nPress "X" to clear all cells\nPress "H" to hide/show this text and show/hide grid for cell placement', 0, 0, arcade.color.CYAN, bold=True, font_size=15)
+            arcade.draw_text('Press "R" to randomize the cell creation\nPress "ESC" to exit or return to the creation menu if in game\nPress "Enter" to start\nPress "X" to clear all cells\nPress "H" to hide/show this text and show/hide grid for cell placement', 0, 0, arcade.color.WHITE, bold=True, font_size=15)
 
     def on_key_press(self, key, modifiers):
         """
@@ -87,7 +87,7 @@ class GameCreationView(arcade.View):
             _y: y axis position of the mouse press
             _button: Conditions created from button press
         """
-
+        
         if not self.text_shown:
             board_x = int(_x // self.board_dx)
             board_y = int(_y // self.board_dy)
