@@ -30,6 +30,26 @@ Here are some of the things I am interested in adding later
 * Pausing the game
 * Adjusting the size of the board for cells outside of the screen space (they get killed right now if they are off screen)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Old version of the readme 
 
 # Conway's Game of Life
