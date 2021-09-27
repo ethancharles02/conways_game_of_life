@@ -20,6 +20,7 @@ VS Code was used to create this game/program
 * [The Python Arcade Library](https://api.arcade.academy/en/latest/)
 * [W3 Schools Python Documentation](https://www.w3schools.com/python/default.asp)
 * [Original Python Documentation](https://docs.python.org/3/)
+* [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 # Future Work
 Here are some of the things I am interested in adding later
