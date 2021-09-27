@@ -1,3 +1,37 @@
+# Overview
+
+### Conway's Game of Life
+Conway's Game of Life is setup on a grid of infinite cells, certain cells on the grid are alive
+while others are dead. 
+For this version, the grid is finite instead of infinite
+Everything is decided at the beginning based on 3 rules:
+* Any live cell that has 2-3 nearby live cells (within one cell radius) will survive.
+* A dead cell with 3 nearby live cells will become a live cell.
+* Any other cell dies.
+
+# Development Environment
+VS Code was used to create this game/program
+
+### Dependancies
+* Python 3.9.4
+* Arcade 2.5.7 module
+
+# Useful Websites
+* [The Python Arcade Library](https://api.arcade.academy/en/latest/)
+* [W3 Schools Python Documentation](https://www.w3schools.com/python/default.asp)
+* [Original Python Documentation](https://docs.python.org/3/)
+
+# Future Work
+Here are some of the things I am interested in adding later
+* Dragging the mouse to create cells
+* Saving cell configurations as files
+* Importing cell configurations
+* Changing settings in the menu
+* Pausing the game
+* Adjusting the size of the board for cells outside of the screen space (they get killed right now if they are off screen)
+
+<!-- Old version of the readme 
+
 # Conway's Game of Life
 Conway's Game of Life is setup on a grid of infinite cells, certain cells on the grid are alive
 while others are dead. Everything is decided at the beginning based on 3 rules:
@@ -49,4 +83,4 @@ root                    (project root folder)
 
 ## Author
 ---
-* Ethan Charles: ethan.charles02@gmail.com
+* Ethan Charles: ethan.charles02@gmail.com -->
