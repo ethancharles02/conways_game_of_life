@@ -24,6 +24,7 @@ class GameCreationView(arcade.View):
 
         self.board_dx = constants.SCREEN_WIDTH / self.board.width
         self.board_dy = constants.SCREEN_HEIGHT / self.board.height
+        self.text_shown = True
 
     def on_show(self):
         """
@@ -37,17 +38,19 @@ class GameCreationView(arcade.View):
         """
         arcade.start_render()
 
-        for cell in self.board.initial_cells:
-            arcade.draw_lrtb_rectangle_filled(cell[0] * self.board_dx, cell[0] * self.board_dx + self.board_dx, cell[1] * self.board_dy + self.board_dy, cell[1] * self.board_dy, arcade.color.GREEN_YELLOW)
+        if not self.text_shown:
+            for cell in self.board.initial_cells:
+                arcade.draw_lrtb_rectangle_filled(cell[0] * self.board_dx, cell[0] * self.board_dx + self.board_dx, cell[1] * self.board_dy + self.board_dy, cell[1] * self.board_dy, arcade.color.GREEN_YELLOW)
 
-        for x in range(constants.BOARD_WIDTH + 1):
-            x_pos = x * self.board_dx
-            arcade.draw_lrtb_rectangle_filled(x_pos - 0.5, x_pos + 0.5, constants.SCREEN_HEIGHT - 1, 0, arcade.color.WHITE)
-        for y in range(constants.BOARD_HEIGHT + 1):
-            y_pos = y * self.board_dy
-            arcade.draw_lrtb_rectangle_filled(0, constants.SCREEN_WIDTH - 1, y_pos + 0.5, y_pos - 0.5, arcade.color.WHITE)
+            for x in range(constants.BOARD_WIDTH + 1):
+                x_pos = x * self.board_dx
+                arcade.draw_lrtb_rectangle_filled(x_pos - 0.5, x_pos + 0.5, constants.SCREEN_HEIGHT - 1, 0, arcade.color.WHITE)
+            for y in range(constants.BOARD_HEIGHT + 1):
+                y_pos = y * self.board_dy
+                arcade.draw_lrtb_rectangle_filled(0, constants.SCREEN_WIDTH - 1, y_pos + 0.5, y_pos - 0.5, arcade.color.WHITE)
         
-        # arcade.draw_text()
+        else:
+            arcade.draw_text('Press "R" to randomize the cell creation\nPress "ESC" to exit or return to the creation menu if in game\nPress "Enter" to start\nPress "X" to clear all cells\nPress "H" to hide/show this text and show/hide grid for cell placement', 0, 0, arcade.color.CYAN, bold=True, font_size=15)
 
     def on_key_press(self, key, modifiers):
         """
@@ -69,8 +72,11 @@ class GameCreationView(arcade.View):
             self.board.clear(True)
             for x in range(self.board.width):
                 for y in range(self.board.height):
-                    if randint(0, 5) == 1:
+                    if randint(*constants.RANDOM_CELL_CREATION_RANGE) == 1:
                         self.board.add_cell((x, y), True)
+        
+        if key == arcade.key.H:
+            self.text_shown = not self.text_shown
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """
@@ -81,7 +87,9 @@ class GameCreationView(arcade.View):
             _y: y axis position of the mouse press
             _button: Conditions created from button press
         """
-        board_x = int(_x // self.board_dx)
-        board_y = int(_y // self.board_dy)
 
-        self.board.flip_cell((board_x, board_y))
+        if not self.text_shown:
+            board_x = int(_x // self.board_dx)
+            board_y = int(_y // self.board_dy)
+
+            self.board.flip_cell((board_x, board_y))

@@ -36,7 +36,7 @@ class GameView(arcade.View):
 
             for x in range(self.board.width):
                 for y in range(self.board.height):
-                    if randint(0, 5) == 1:
+                    if randint(*constants.RANDOM_CELL_CREATION_RANGE) == 1:
                         self.board.add_cell((x, y), True)
 
         self.board_dx = constants.SCREEN_WIDTH / self.board.width
@@ -67,7 +67,7 @@ class GameView(arcade.View):
             self.board.clear(True)
             for x in range(self.board.width):
                 for y in range(self.board.height):
-                    if randint(0, 5) == 1:
+                    if randint(*constants.RANDOM_CELL_CREATION_RANGE) == 1:
                         self.board.add_cell((x, y), True)
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
